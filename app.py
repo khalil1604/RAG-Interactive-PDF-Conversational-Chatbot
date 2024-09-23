@@ -28,9 +28,22 @@ st.write("Upload Pdf's and chat with their content")
 ## Input the Groq API Key
 api_key=st.text_input("Enter your Groq API key:",type="password")
 
+# List of LLM options
+model_options = [
+    "llama-3.1-8b-instant",
+    "gemma2-9b-it",
+    "mixtral-8x7b-32768",
+    "llama-3.1-8b-instant",
+    "llama-3.1-70b-versatile"
+]
+
+# Dropdown for model selection
+selected_model = st.selectbox("Select LLM Model:", model_options)
+
+
 ## Check if groq api key is provided
 if api_key:
-    llm=ChatGroq(groq_api_key=api_key,model_name="Gemma2-9b-It")
+    llm=ChatGroq(groq_api_key=api_key,model_name= selected_model)
 
     ## chat interface
 
