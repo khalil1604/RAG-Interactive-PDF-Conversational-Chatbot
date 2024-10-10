@@ -15,14 +15,14 @@ from langchain_community.document_loaders import PyPDFLoader
 import os
 
 from dotenv import load_dotenv
-#load_dotenv()
+load_dotenv()
 
-#os.environ['HF_TOKEN']=os.getenv("HF_TOKEN")
+os.environ['HF_TOKEN']=os.getenv("HF_TOKEN")
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 #For streamlit Cloud Deployment
-api_key = st.secrets["GROQ_API_KEY"]
-hf_token = st.secrets["HF_TOKEN"]
+#api_key = st.secrets["GROQ_API_KEY"]
+#hf_token = st.secrets["HF_TOKEN"]
 
 ## set up Streamlit 
 st.title("Conversational RAG With PDF uplaods and chat history")
